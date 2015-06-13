@@ -12,6 +12,12 @@ get '/messages/new' do
    erb :'messages/new'
  end
 
+get '/messages/:id' do
+  @message = Message.find params[:id]
+  erb :'messages/show'
+end
+
+
 post '/messages' do
   binding.pry
   @message = Message.new(
