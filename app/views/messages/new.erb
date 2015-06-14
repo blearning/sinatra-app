@@ -1,22 +1,7 @@
-<form method="post" action="/messages">
-  <div>
-    <label>Author:</label>
-    <input type="text" name="author" value="<%= @message && @message.author %>">
-  </div>
-  <div>
-    <label>Subject:</label>
-    <input type="text" name="title" value="<%= @message && @message.title %>">
-  </div>
-  <div>
-    <label>Content:</label>
-    <input type="text" name="content" value="<%= @message && @message.content %>">
-  </div>
-  <div>
-    <input type="submit" value="Submit">
-  </div>
-</form>
+<h1>Post a Message</h1>
+<hr/>
 
-<% if @message && @message.errors.any? %>
+<% if @message.errors.any? %>
   <div>
     <strong>Some issues with your message, please fix them:</strong>
     <ul>
@@ -26,3 +11,21 @@
     </ul>
   </div>
 <% end %>
+
+<form method="post" action="/messages">
+  <div>
+    <label>Author:</label>
+    <input type="text" name="author" value="<%= @message.author %>">
+  </div>
+  <div>
+    <label>Title:</label>
+    <input type="text" name="title" value="<%= @message.title %>">
+  </div>
+  <div>
+    <label>Content:</label>
+    <input type="text" name="content" value="<%= @message.content %>">
+  </div>
+  <div>
+    <input type="submit" value="Submit" >
+  </div>
+</form>
