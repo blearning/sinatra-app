@@ -1,7 +1,7 @@
-<h1><%= @message.url %></h1>
+'<h1><%= @message.url %></h1>
 
 <p>
-  Author: <%= @message.author %>
+  Author: <a href="/messages/author/<%= @message.author %>"><%= @message.author %></a>
 </p>
 
 <p>
@@ -13,4 +13,4 @@
 </p>
 
 <hr/>
-<a href="/messages">Back to All Messages</a>
+<a href="/messages">Back to All Messages</a>'
