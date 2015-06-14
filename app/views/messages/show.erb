@@ -1,4 +1,4 @@
-<h1><%= @message.title %></h1>
+<h1><%= @message.url %></h1>
 
 <p>
   Author: <%= @message.author %>
@@ -6,6 +6,10 @@
 
 <p>
   <%= @message.content  %>
+</p>
+
+<p>
+  <%= @message.url if @message.url != nil %>
 </p>
 
 <hr/>
